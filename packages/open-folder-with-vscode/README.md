@@ -1,3 +1,5 @@
 # open folder with vscode
 
-open folder with vscode
+## Description
+
+open current focused folder with vscode
