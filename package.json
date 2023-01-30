@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "@raycast/api": "^1.46.1",
+    "run-applescript": "^6.1.0"
+  },
   "keywords": [],
   "author": "lf7817",
   "license": "ISC"
