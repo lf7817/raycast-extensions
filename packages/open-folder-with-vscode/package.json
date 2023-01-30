@@ -39,6 +39,24 @@
           "title": "bash"
         }
       ]
+    },
+    {
+      "name": "build",
+      "type": "dropdown",
+      "required": false,
+      "title": "Build",
+      "default": "code",
+      "description": "Select which build of Visual Studio Code to use",
+      "data": [
+        {
+          "value": "code",
+          "title": "Visual Studio Code"
+        },
+        {
+          "value": "code-insiders",
+          "title": "Visual Studio Code - Insiders"
+        }
+      ]
     }
   ],
   "dependencies": {
@@ -61,5 +79,6 @@
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
     "publish": "ray publish"
-  }
+  },
+  "version": "1.0.0"
 }

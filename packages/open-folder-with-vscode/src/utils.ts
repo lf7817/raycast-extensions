@@ -1,6 +1,7 @@
 import { runAppleScript } from "run-applescript";
 import { closeMainWindow, showToast, Toast } from "@raycast/api";
 import { execSync } from "child_process";
+import { OpenWithVScodeOptions } from "./types";
 
 const scriptFinderPath = `
   if application "Finder" is not running then
@@ -24,9 +25,10 @@ export const getFocusFinderPath = async () => {
   }
 };
 
-export const openWithVScode = async (path: string, terminal?: string) => {
+export const openWithVScode = async (options: OpenWithVScodeOptions) => {
+  const { terminal, path, build = "code" } = options;
   try {
-    const cmd = terminal ? `${terminal} "code --folder-uri ${path}"` : `code --folder-uri ${path}`;
+    const cmd = terminal ? `${terminal} "${build} --folder-uri ${path}"` : `${build} --folder-uri ${path}`;
     execSync(cmd, {
       timeout: 3000,
       windowsHide: true,
