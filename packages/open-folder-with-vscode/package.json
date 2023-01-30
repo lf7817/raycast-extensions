@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "open-folder-with-vscode",
-  "title": "open folder with vscode",
-  "description": "open folder with vscode",
+  "title": "open current focused folder with vscode",
+  "description": "open current focused folder with vscode",
   "icon": "icon.png",
   "author": "lf7817",
   "categories": [
@@ -12,9 +12,33 @@
   "commands": [
     {
       "name": "index",
-      "title": "open-folder-with-vscode",
-      "description": "open-folder-with-vscode",
+      "title": "Open Folder With VScode",
+      "description": "open current focused folder with vscode",
       "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "terminal",
+      "type": "dropdown",
+      "required": false,
+      "title": "Default Terminal",
+      "description": "set default terminal",
+      "default": "",
+      "data": [
+        {
+          "value": "",
+          "title": "default"
+        },
+        {
+          "value": "zsh -l -c",
+          "title": "zsh"
+        },
+        {
+          "value": "bash -l -c",
+          "title": "bash"
+        }
+      ]
     }
   ],
   "dependencies": {

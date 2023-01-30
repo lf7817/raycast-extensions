@@ -12,9 +12,6 @@ const scriptFinderPath = `
   end tell
 `;
 
-/**
- * 获取finder当前路径
- */
 export const getFocusFinderPath = async () => {
   try {
     return await runAppleScript(scriptFinderPath);
@@ -27,10 +24,9 @@ export const getFocusFinderPath = async () => {
   }
 };
 
-export const openWithVScode = async (path: string) => {
+export const openWithVScode = async (path: string, terminal?: string) => {
   try {
-    // TODO: 兼容windows
-    const cmd = `zsh -l -c "code --folder-uri ${path}"`;
+    const cmd = terminal ? `${terminal} "code --folder-uri ${path}"` : `code --folder-uri ${path}`;
     execSync(cmd, {
       timeout: 3000,
       windowsHide: true,
@@ -44,4 +40,4 @@ export const openWithVScode = async (path: string) => {
       message: e.message,
     });
   }
-}
+};
